@@ -1,0 +1,8 @@
+# Project
+build/
+.vscode/
+.idea/
+
+# c
+*.o
+*.o.*
