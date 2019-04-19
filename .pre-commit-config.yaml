@@ -1,0 +1,62 @@
+# Ross Jacobs pre-commit file
+exclude: ''
+fail_fast: false
+minimum_pre_commit_version: '0'
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v2.1.0  # Use the ref you want to point at
+  hooks:
+  # Checks
+  - id: check-added-large-files 
+    args: ['--maxkb=10']
+  - id: check-ast 
+  - id: check-byte-order-marker
+  - id: check-builtin-literals
+  - id: check-case-conflict
+  - id: check-docstring-first
+  - id: check-executables-have-shebangs
+  - id: check-symlinks
+  # Data formats  
+  - id: check-json
+  - id: check-xml
+  - id: check-yaml
+  # Security
+  - id: detect-aws-credentials
+  - id: detect-private-key
+  # Fixers
+  - id: flake8
+  - id: double-quote-string-fixer
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+    args: ['--markdown-linebreak-ext=md']
+  - id: fix-encoding-pragma 
+  - id: name-tests-test
+  - id: requirements-txt-fixer
+  - id: mixed-line-ending 
+    args: ['--fix={lf}']
+  # Project enforcement
+  - id: forbid-new-submodules
+- repo: https://github.com/jumanjihouse/pre-commit-hooks
+  sha: 1.11.0
+  hooks:
+    - id: forbid-binary
+    - id: forbid-space-in-indent
+    - id: script-must-have-extension
+    - id: script-must-not-have-extension
+    - id: shellcheck
+    - id: shfmt
+-   repo: https://github.com/Lucas-C/pre-commit-hooks-go
+    sha: v1.0.0
+    hooks:
+    # Checks Makefile syntax
+    -   id: checkmake
+- repo: https://github.com/prettier/prettier
+  sha: 1.17.0
+  hooks:
+  - id: prettier
+    args: ['--write', '--prose-wrap=always'] 
+- repo: https://github.com/ambv/black
+  sha: 19.3b0
+  hooks:
+  - id: black
+

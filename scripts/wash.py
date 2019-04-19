@@ -14,16 +14,15 @@ Options:
     -n, --no-change         Do not fix errors/warnings/change automatically
                             (default is to fix in place)
     -o, --output <type>     Specify output type (tty, json), if supported
+    -w, --wrap              Wrap to line length guidelines for $language 
 """
 
-import glob
-import re
-
-import docopt
-
 from lint_c import lint_c
+import re
 from lint_md import lint_md
+import glob
 from lint_py import lint_py
+import docopt
 from lint_sh import lint_sh
 
 
@@ -42,6 +41,9 @@ def main():
     lint_md(get_matching_files(r"\.md$", files), options)
     lint_py(get_matching_files(r"\.py.?$", files), options)
     lint_sh(get_matching_files(r"\..{0,2}sh$", files), options)
+
+    i = 0
+    ++i
 
 
 if __name__ == 'main':
