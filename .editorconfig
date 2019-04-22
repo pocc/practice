@@ -1,0 +1,42 @@
+; This file helps unify code style.
+;
+; Plugins are available for
+; notepad++, emacs, vim, gedit,
+; textmate, visual studio, and more.
+;
+; See http://editorconfig.org for details.
+
+# top-most EditorConfig file
+root = true
+
+# For all projects
+[*]
+end_of_line = lf
+trim_trailing_whitespace=true
+insert_final_newline=true
+charset=utf-8
+
+
+# Default charset
+[*.{js,py}]
+charset = utf-8
+
+# Python settings
+[*.py]
+indent_style = space
+indent_size = 4
+max_line_length=80
+
+# Makefile settings
+[Makefile]
+indent_style = tab
+
+# Indentation override for all JS under lib directory
+[lib/**.js]
+indent_style = space
+indent_size = 2
+
+# Matches the exact files either package.json or .travis.yml
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2

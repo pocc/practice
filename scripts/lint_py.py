@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Lint python files with the following libraries:
     * black
     * flake8
@@ -5,9 +6,7 @@
     * pylint
 
 """
-import subprocess as sp
 
 
 def lint_py(files):
-    sp.call(flake8, pylint, black)
-
+    pass

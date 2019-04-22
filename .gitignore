@@ -2,6 +2,11 @@
 build/
 .vscode/
 .idea/
+.swp*
+.*.swp*
+.mypy_cache/
+__pycache__/
+.pyc
 
 # c
 *.o

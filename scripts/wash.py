@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Detect multiple languages and lint appropriately.
 
 Philosophy:
@@ -14,15 +15,14 @@ Options:
     -n, --no-change         Do not fix errors/warnings/change automatically
                             (default is to fix in place)
     -o, --output <type>     Specify output type (tty, json), if supported
-    -w, --wrap              Wrap to line length guidelines for $language 
+    -w, --wrap              Wrap to line length guidelines for $language
 """
+import glob
+import re
 
 from lint_c import lint_c
-import re
 from lint_md import lint_md
-import glob
 from lint_py import lint_py
-import docopt
 from lint_sh import lint_sh
 
 
@@ -34,7 +34,8 @@ def get_matching_files(regex, filelist):
 
 def main():
     """Pass files of a type to the appropriate linter for analysis."""
-    options = docopt.docopt(__doc__)
+    # options = docopt.docopt(__doc__)
+    options = []
     files = glob.glob("**/*", recursive=True)
 
     lint_c(get_matching_files(r"\.[ch][px]?[px]?$", files), options)
@@ -42,9 +43,6 @@ def main():
     lint_py(get_matching_files(r"\.py.?$", files), options)
     lint_sh(get_matching_files(r"\..{0,2}sh$", files), options)
 
-    i = 0
-    ++i
 
-
-if __name__ == 'main':
+if __name__ == "__main__":
     main()

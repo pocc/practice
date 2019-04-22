@@ -2,7 +2,7 @@
  * Input (I=int, F=float):
  * I I
  * F F
- * hasontehusan 
+ * hasontehusan
  * Output:
  * I_sum I_diff
  * F_sum F_diff
@@ -34,7 +34,7 @@ int main() {
 
   scanf("%s %s", buffer1, buffer2);
   int1 = (int)strtol(buffer1, &_ptr, BASE10);
-  int2 = (int)strtol(buffer2, &_ptr, 10);
+  int2 = (int)strtol(buffer2, &_ptr, BASE10);
 
   scanf("%s %s", buffer1, buffer2);
   flt1 = strtof(buffer1, &_ptr);
