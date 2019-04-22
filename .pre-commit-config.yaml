@@ -1,4 +1,4 @@
-# Ross Jacobs pre-commit file
+# Ross Jacobs' pre-commit file
 fail_fast: false
 default_language_version:
   python: python3.7
@@ -35,10 +35,9 @@ repos:
       - id: fix-encoding-pragma
       - id: requirements-txt-fixer
 
-      ###########
-      # GENERAL #
-      ###########
-      # General checks
+  ###########
+  # GENERAL #
+  ###########
       - id: check-added-large-files
         args: ["--maxkb=10"]
       - id: check-executables-have-shebangs
@@ -68,27 +67,27 @@ repos:
       - id: forbid-binary
       - id: script-must-have-extension
 
-      ########
-      # BASH #
-      ########
+  ########
+  # BASH #
+  ########
       - id: shellcheck
       - id: shfmt
 
   ############
   # MARKDOWN #
   ############
-  - repo: https://github.com/prettier/prettier
-    rev: ed15b6d04e60a75d81c406ee899a86690187d44e
+  - repo: https://github.com/awebdeveloper/pre-commit-prettier
+    rev: c0573b2f7c5f39fddf1c5b8b4528cc73686df524
     hooks:
       - id: prettier
-        args: ["--write", "--prose-wrap=always"]
+        args: ["--write", "--prose-wrap", "always", "--ignore-path", "<( echo LICENSE.md )"]
         types: [markdown]
 
   #########
   # C/CPP #
   #########
   - repo: https://github.com/pocc/pre-commit-hooks
-    rev: 7f8b302d394f4981313fd0514d1c11014d1ce9b2
+    rev: 4668b66bef7b1224490066f8b69abb6cb2e2b7ad
     hooks:
       - id: clang-format
         args: [-i, --style=Google]
