@@ -19,7 +19,7 @@ void print_int_sum_diff(const int *var1, const int *var2) {
 }
 
 void print_flt_sum_diff(const float *var1, const float *var2) {
-  printf("%f %f\n", *var1 + *var2, *var1 - *var2);
+  printf("%.1f %.1f\n", *var1 + *var2, *var1 - *var2);
 }
 
 int main() {
