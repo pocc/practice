@@ -87,14 +87,11 @@ repos:
   # C/CPP #
   #########
   - repo: https://github.com/pocc/pre-commit-hooks
-    rev: 4668b66bef7b1224490066f8b69abb6cb2e2b7ad
+    rev: c0c98dd27cc53c10f5b5dd03aff3f3d8cb01561a
     hooks:
       - id: clang-format
         args: [-i, --style=Google]
-        files: \.cp?p?
       - id: clang-tidy
         args: [-fix, -fix-errors, -checks=*, -warnings-as-errors=*]
-        files: \.cp?p?
       - id: oclint
         args: [-enable-clang-static-analyzer, -enable-global-analysis]
-        files: \.cp?p?
