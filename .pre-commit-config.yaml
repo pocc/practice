@@ -87,7 +87,7 @@ repos:
   # C/CPP #
   #########
   - repo: https://github.com/pocc/pre-commit-hooks
-    rev: c0c98dd27cc53c10f5b5dd03aff3f3d8cb01561a
+    rev: v0.2.0
     hooks:
       - id: clang-format
         args: [-i, --style=Google]
